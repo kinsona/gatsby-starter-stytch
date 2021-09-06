@@ -1,0 +1,21 @@
+#login {
+  color: "#232129";
+  padding: 96;
+}
+
+#login h1 {
+  marginTop: 0;
+  marginBottom: 64;
+}
+
+#login .login-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+#login .sign-in-container {
+  border: 2px solid #666;
+  border-radius: 16px;
+  margin:  8px;
+  padding: 16px;
+}
