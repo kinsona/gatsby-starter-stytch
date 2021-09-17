@@ -48,9 +48,9 @@ const Login = () => {
   return (
     <Layout>
       <main id="login">
-        <title>Gatsby Starter with Stytch Passwordless Auth</title>
+        <title>Gatsby Starter with Stytch</title>
         <h1>
-          Gatsby Starter with Stytch Passwordless Auth
+          Gatsby Starter with Stytch
         </h1>
         <div className="login-content">
           <div className="welcome-container">

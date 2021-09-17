@@ -1,11 +1,20 @@
-<p align="center">
+<p align="center" style="display:flex; justify-content:space-evenly">
   <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" height="80" />
+  </a>
+  <a href="https://www.stytch.com">
+    <img alt="Stytch" src="https://stytch.com/static/media/light-charcoal-wordmark.284c9b63.webp" height="80" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  Gatsby Starter with Stytch
 </h1>
+
+## Overview
+
+This starter creates a simple site with passwordless authentication, provided by [Stytch](https://stytch.com/).  Users can sign up and log in with just an email address - no password needed! 
+
+*Note*: this starter uses Gatsby Cloud for an easy backend function to call the Stytch API. This function could be moved to a custom backend if you have or need one.  See `src/api/authenticate.js`.
 
 ## 🚀 Quick start
 
@@ -14,11 +23,21 @@
     Use the Gatsby CLI to create a new site, specifying the minimal starter.
 
     ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
+    # create a new Gatsby site using this starter
+    gatsby new my-gatsby-site [https://github.com/kinsona/gatsby-starter-stytch]
     ```
 
-2.  **Start developing.**
+2.  **Sign up for Stytch and configure your new project**
+
+    Create a `.env.development` file, using `.env_sample` as a template.
+
+    Copy the variables for your project out of the [API Keys section of the Stytch dashboard](https://stytch.com/dashboard/api-keys):
+
+      - `STYTCH_PROJECT_ID`
+      - `STYTCH_PUBLIC_TOKEN`
+      - `STYTCH_SECRET`
+
+3.  **Start developing.**
 
     Navigate into your new site’s directory and start it up.
 
@@ -27,28 +46,14 @@
     npm run develop
     ```
 
-3.  **Open the code and start customizing!**
+4.  **Open the code and start customizing!**
 
     Your site is now running at http://localhost:8000!
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+    Edit files in `src/pages` to see your site update in real-time! Logged-in users will see `src/pages/index.js`, while guests will see `src/pages/login.js`.
 
-4.  **Learn more**
+5.  **Learn more**
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    - [Stytch docs](https://stytch.com/docs/home)
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+    - [Gatsby docs](https://www.gatsbyjs.com/docs)
