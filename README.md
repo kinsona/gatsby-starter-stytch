@@ -3,7 +3,7 @@
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" height="80" />
   </a>
   <a href="https://www.stytch.com">
-    <img alt="Stytch" src="https://stytch.com/static/media/light-charcoal-wordmark.284c9b63.webp" height="80" />
+    <img alt="Stytch" src="src/images/Stytch wordmark - charcoal.svg" height="80" />
   </a>
 </p>
 <h1 align="center">
