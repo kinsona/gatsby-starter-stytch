@@ -3,7 +3,7 @@ import { navigate } from "gatsby"
 import queryString from "query-string";
 
 const Authenticate = ({ location }) => {
-  React.useEffect((location) => {
+  React.useEffect(() => {
     const { search } = location;
     const token = queryString.parse(search).token;
     if (typeof token !== "string") {
@@ -32,7 +32,7 @@ const Authenticate = ({ location }) => {
       }
     };
     authenticate();
-  }, []);
+  }, [location]);
 
   return <React.Fragment />;
 };
