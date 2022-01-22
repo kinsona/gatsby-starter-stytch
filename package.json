@@ -15,11 +15,11 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@stytch/stytch-react": "^1.1.6",
-    "gatsby": "^3.13.0",
-    "gatsby-plugin-gatsby-cloud": "^3.1.0",
+    "@stytch/stytch-react": "^3.0.5",
+    "gatsby": "^4.5.4",
+    "gatsby-plugin-gatsby-cloud": "^4.5.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "stytch": "^3.3.0"
+    "stytch": "^3.10.1"
   }
 }
