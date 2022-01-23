@@ -7,14 +7,13 @@ import Layout from "../components/layout"
 
 const Login = () => {
   const stytchProps = {
-    config: {
-      loginConfig: {
-        magicLinkUrl: process.env.LOGIN_MAGIC_LINK_URL,
-        expirationMinutes: 30,
-      },
-      createUserConfig: {
-        magicLinkUrl: process.env.CREATE_USER_MAGIC_LINK_URL,
-        expirationMinutes: 30,
+    loginOrSignupView: {
+      products: ['emailMagicLinks'],
+      emailMagicLinksOptions: {
+        loginRedirectURL: process.env.LOGIN_MAGIC_LINK_URL,
+        loginExpirationMinutes:30,
+        signupRedirectURL:  process.env.CREATE_USER_MAGIC_LINK_URL,
+        signupExpirationMinutes: 30,
       },
     },
     style: {
@@ -60,7 +59,7 @@ const Login = () => {
           <div className="sign-in-container">
             <Stytch
               publicToken={stytchProps.publicToken}
-              config={stytchProps.config}
+              loginOrSignupView={stytchProps.loginOrSignupView}
               style={stytchProps.style}
               callbacks={stytchProps.callbacks}
             />
