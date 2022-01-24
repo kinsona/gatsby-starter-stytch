@@ -29,7 +29,17 @@ const IndexPage = ({ location }) => {
     return null;
   }
 
-  const { state: { user, session } } = location;
+  const { state: { user, session, sessionToken } } = location;
+
+  // Store the session token so we can check for an existing session
+  // before asking the user to log in.
+  if (sessionToken) {
+    window.localStorage.setItem("stytchSessionToken", sessionToken);
+  }
+
+  const clearSession = () => {
+    window.localStorage.removeItem("stytchSessionToken");
+  }
 
   return (
     <Layout>
@@ -42,7 +52,8 @@ const IndexPage = ({ location }) => {
           <li>Started at: {session.started_at}</li>
           <li>Expires at: {session.expires_at}</li>
         </ul>
-        <Link to="/" state={{ user: null }}>Log Out</Link>
+      {/* onclick clear session from localStorage */}
+        <Link to="/" state={{ user: null }} onClick={clearSession}>Log Out</Link> 
         <p>
           Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
           update in real-time.{" "}

@@ -1,11 +1,46 @@
 import "./login.css";
 
 import React from "react";
+import { navigate } from "gatsby"
 import { Stytch } from "@stytch/stytch-react";
 
 import Layout from "../components/layout"
 
+
+const authenticateSession = async (sessionToken) => {
+  try {
+    console.log("checking token")
+    const response = await fetch(`/api/authenticate_session?token=${sessionToken}`);
+    if (response.ok) {
+      response.json().then(data => {
+        console.log("logged in from existing session")
+        // TODO: You could add a call to your database to get additional user data here
+        navigate("/", {
+          state: {
+            user: data.session.user_id,
+            session: data.session,
+            sessionToken: data.session_token
+          }});
+      });
+    } else {
+      console.log("session token invalid");
+      window.localStorage.removeItem("stytchSessionToken");
+    }
+  } catch (err) {
+    console.error("Error authenticating session token");
+    window.localStorage.removeItem("stytchSessionToken");
+  }
+};
+
+
 const Login = () => {
+
+  // authenticate session if a Stytch session token is stored
+  const sessionToken = window.localStorage.getItem("stytchSessionToken");
+  if (sessionToken) {
+    authenticateSession(sessionToken);
+  }
+
   const stytchProps = {
     loginOrSignupView: {
       products: ['emailMagicLinks'],
