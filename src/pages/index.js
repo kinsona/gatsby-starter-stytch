@@ -38,6 +38,7 @@ const IndexPage = ({ location }) => {
   }
 
   const clearSession = () => {
+    console.log("clearing session token");
     window.localStorage.removeItem("stytchSessionToken");
   }
 
@@ -52,7 +53,7 @@ const IndexPage = ({ location }) => {
           <li>Started at: {session.started_at}</li>
           <li>Expires at: {session.expires_at}</li>
         </ul>
-      {/* onclick clear session from localStorage */}
+        {/* onclick clear session from localStorage */}
         <Link to="/" state={{ user: null }} onClick={clearSession}>Log Out</Link> 
         <p>
           Edit <code style={codeStyles}>src/pages/index.js</code> to see this page

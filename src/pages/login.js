@@ -9,7 +9,7 @@ import Layout from "../components/layout"
 
 const authenticateSession = async (sessionToken) => {
   try {
-    console.log("checking token")
+    console.log("checking token for existing session")
     const response = await fetch(`/api/authenticate_session?token=${sessionToken}`);
     if (response.ok) {
       response.json().then(data => {
@@ -92,12 +92,15 @@ const Login = () => {
             <p>Sign up, login, and invite by email without the need for passwords!</p>
           </div>
           <div className="sign-in-container">
-            <Stytch
-              publicToken={stytchProps.publicToken}
-              loginOrSignupView={stytchProps.loginOrSignupView}
-              style={stytchProps.style}
-              callbacks={stytchProps.callbacks}
-            />
+            { sessionToken ?
+              <div className="loading">...loading...</div> :
+              <Stytch
+                publicToken={stytchProps.publicToken}
+                loginOrSignupView={stytchProps.loginOrSignupView}
+                style={stytchProps.style}
+                callbacks={stytchProps.callbacks}
+              />
+            }
           </div>
         </div>
       </main>
