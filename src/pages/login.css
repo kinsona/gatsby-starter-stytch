@@ -13,9 +13,20 @@
   justify-content: space-around;
 }
 
+#login .welcome-container {
+  flex-basis: 45%;
+}
+
 #login .sign-in-container {
-  border: 2px solid #666;
-  border-radius: 16px;
+  flex-grow: 1;
   margin:  8px;
   padding: 16px;
+  text-align: center;
+  border: 2px solid #666;
+  border-radius: 16px;
+}
+
+#login .sign-in-container .loading {
+  color: #333;
+  font-style: italic;
 }
