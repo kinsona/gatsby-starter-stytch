@@ -41,6 +41,9 @@ const Login = () => {
     authenticateSession(sessionToken);
   }
 
+  // Be sure to check out the docs if you want to give users
+  // the option for Google, Apple, or MS OAuth:
+  // https://stytch.com/docs/javascript-sdk#javascript-sdk/oauth
   const stytchProps = {
     loginOrSignupView: {
       products: ['emailMagicLinks'],
