@@ -6,6 +6,9 @@ import { Stytch } from "@stytch/stytch-react";
 
 import Layout from "../components/layout"
 
+// Check if window is defined (so if in the browser or in node.js).
+// https://www.gatsbyjs.com/docs/debugging-html-builds/#how-to-check-if-window-is-defined
+const isBrowser = typeof window !== "undefined"
 
 const authenticateSession = async (sessionToken) => {
   try {
@@ -34,6 +37,12 @@ const authenticateSession = async (sessionToken) => {
 
 
 const Login = () => {
+  // `gatsby build` will fail trying to build this component for
+  // server-side rendering if window is undefined, so we check to
+  // make sure we're in the browser before rendering.
+  if (!isBrowser) {
+    return null;
+  }
 
   // authenticate session if a Stytch session token is stored
   const sessionToken = window.localStorage.getItem("stytchSessionToken");
@@ -45,9 +54,9 @@ const Login = () => {
     loginOrSignupView: {
       products: ['emailMagicLinks'],
       emailMagicLinksOptions: {
-        loginRedirectURL: process.env.LOGIN_MAGIC_LINK_URL,
+        loginRedirectURL: process.env.GATSBY_LOGIN_MAGIC_LINK_URL,
         loginExpirationMinutes:30,
-        signupRedirectURL:  process.env.CREATE_USER_MAGIC_LINK_URL,
+        signupRedirectURL:  process.env.GATSBY_CREATE_USER_MAGIC_LINK_URL,
         signupExpirationMinutes: 30,
       },
     },
@@ -59,7 +68,7 @@ const Login = () => {
         visible: true,
       },
     },
-    publicToken: process.env.STYTCH_PUBLIC_TOKEN,
+    publicToken: process.env.GATSBY_STYTCH_PUBLIC_TOKEN,
     callbacks: {
       onEvent: (data) => {
         // TODO: check whether the user exists in your DB

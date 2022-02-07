@@ -11,7 +11,6 @@ export default function handler(req, res) {
     res.status(200).json(response);
   })
   .catch(error => {
-    console.log(error);
-    res.send('There was an error authenticating the session.');
+    res.status(404).send('There was an error authenticating the session.');
   });
 }
