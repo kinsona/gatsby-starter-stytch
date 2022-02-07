@@ -54,9 +54,9 @@ const Login = () => {
     loginOrSignupView: {
       products: ['emailMagicLinks'],
       emailMagicLinksOptions: {
-        loginRedirectURL: process.env.LOGIN_MAGIC_LINK_URL,
+        loginRedirectURL: process.env.GATSBY_LOGIN_MAGIC_LINK_URL,
         loginExpirationMinutes:30,
-        signupRedirectURL:  process.env.CREATE_USER_MAGIC_LINK_URL,
+        signupRedirectURL:  process.env.GATSBY_CREATE_USER_MAGIC_LINK_URL,
         signupExpirationMinutes: 30,
       },
     },
@@ -68,7 +68,7 @@ const Login = () => {
         visible: true,
       },
     },
-    publicToken: process.env.STYTCH_PUBLIC_TOKEN,
+    publicToken: process.env.GATSBY_STYTCH_PUBLIC_TOKEN,
     callbacks: {
       onEvent: (data) => {
         // TODO: check whether the user exists in your DB
