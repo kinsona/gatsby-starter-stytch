@@ -16,7 +16,7 @@ This starter creates a simple site with passwordless authentication, provided by
 
 *Note*: this starter uses Gatsby Cloud for an easy backend function to call the Stytch API. This function could be moved to a custom backend if you have or need one.  See `src/api/authenticate.js`.
 
-Check out the (live demo deployed with Gatsby Cloud)[https://gatsbystarterstytchmain.gatsbyjs.io/]!
+Check out the [live demo deployed with Gatsby Cloud](https://gatsbystarterstytchmain.gatsbyjs.io/)!
 
 ## 🚀 Quick start
 
